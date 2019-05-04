@@ -1,0 +1,457 @@
+ENG209 – CODEX 2
+
+// Experiment 2 - Question no. 1
+
+#include <iostream>
+#include <conio.h>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	char pack;
+	int hr;
+	double tda, tdb, tdc;
+
+	do{
+	cout << "Package A: P995/mo 10 hrs access are provided. Additional hrs = P20/hr" << endl;
+	cout << "Package B: P1495/mo 20 hrs access are provided. Additional hrs = P10/hr" << endl;
+	cout << "Package C: P1995/mo unlimitedd access is provided" << endl << endl;
+
+	cout << "What Package did you choose? " << endl;
+	cin >> pack;
+
+	cout << "How many additional hour/s have you spent? " << endl;
+	cin >> hr;
+
+	cout << "Your total due is " << endl;
+
+	tda = 995 + (20 * hr);
+	tdb = 1495 + (10 * hr);
+	tdc = 1995;
+
+	switch (pack) {
+
+	case 'a':
+	case 'A':
+		cout << tda;
+		break;
+	case 'b':
+	case 'B':
+		cout << tdb;
+		break;
+	case 'c':
+	case 'C':
+		cout << tdc;
+		break;
+	default: continue;
+		}
+	} while (!abort);
+	
+	_getch();
+	return 0;
+
+}
+
+// Experiment 2 - Question no. 2
+
+#include <iostream>
+#include <conio.h>
+#include <cmath>
+
+
+using namespace std;
+
+int main()
+{
+	double waterby1, waterby2, waterbn, waterdc, consum, consumc, gall, unpdbal, unpdbalf;
+	char ans;
+
+	waterdc = 35.00;
+	consumc = 1.10;
+
+	cout << "Water bill Update: " << endl;
+	cout << "The amount of meter readings in gallons: " << endl;
+	cin >> gall;
+
+	consum = gall * consumc;
+	cout << "The total amount of consumption is: " << endl;
+	cout << consum << " " << endl;
+
+	cout << "Do you have an unpaid balance? " << endl;
+	cout << "Write Y, if YES! and Write N, if No" << endl;
+	cin >> ans;
+	cout << endl;
+
+	if (ans == 'y')
+	{
+		cout << "How much is your Unpaid Balance? " << endl;
+		cin >> unpdbal;
+
+		if (unpdbal > 0) {
+			unpdbalf = unpdbal + 20;
+			cout << "Total amount of Unpaid Balance: " << unpdbalf << endl;
+
+			waterby1 = waterdc + consum + unpdbalf;
+			cout << "The total amount of your Water bill is: " << endl;
+			cout << waterby1 << endl;
+		}
+
+		else if (unpdbal < 0) {
+			waterby2 = waterdc + consum;
+			cout << "The total amount of your Water bill is: " << endl;
+			cout << waterby2 << endl;
+		}
+	}
+
+	else if (ans == 'Y')
+	{
+		cout << "How much is your Unpaid Balance? " << endl;
+		cin >> unpdbal;
+
+		if (unpdbal > 0) {
+			unpdbalf = unpdbal + 20;
+			cout << "Total amount of Unpaid Balance: " << unpdbalf << endl;
+
+			waterby1 = waterdc + consum + unpdbalf;
+			cout << "The total amount of your Water bill is: " << endl;
+			cout << waterby1 << endl;
+		}
+
+		else if (unpdbal < 0) {
+			waterby2 = waterdc + consum;
+			cout << "The total amount of your Water bill is: " << endl;
+			cout << waterby2 << endl;
+		}
+	}
+
+
+	else if (ans == 'n') {
+		
+		waterbn = waterdc + consum;
+		cout << "The total amount of your Water bill is: " << endl;
+		cout << waterbn << endl;
+	}
+
+	else if (ans == 'N') {
+
+		waterbn = waterdc + consum;
+		cout << "The total amount of your Water bill is: " << endl;
+		cout << waterbn << endl;
+	}
+
+	_getch();
+	return 0;
+
+}
+
+// Experiment 2 - Question no. 3
+
+#include <iostream>
+#include <conio.h>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	double x, y, z, v, v2, v3, v4, v4i, v5, v6, v7, v8;
+
+	z = 2.5;
+
+	cout << "Assign a value of x" << endl;
+	cin >> x;
+
+	cout << "Assign a value of y" << endl;
+	cin >> y;
+
+	if (x == 1)
+		if (1 < y)
+		if (y < 5) {
+		v = (x * y * z);
+		cout << "The value of V is " << endl;
+		cout << setw(10);
+		cout << fixed;
+		cout << setprecision(2) << v;
+
+	}
+	else if (x == 1)
+		if (y >= 5) {
+		v2 = x + (y / z);
+		cout << "The value of V is " << endl;
+		cout << setw(10);
+		cout << fixed;
+		cout << setprecision(2) << v2;
+
+	}
+	if (x == 2)
+		if (y <= 5) {
+		v3 = abs((x - y)/z);
+		cout << "The value of V is " << endl;
+		cout << setw(10);
+		cout << fixed;
+		cout << setprecision(2) << v3 << endl;	
+	}
+	else if (x == 2)
+		if (y > 5) {
+		v4 = x - sqrt(y + z);
+		cout << "The value of V is " << endl;
+		cout << setw(10);
+		cout << fixed;
+		cout << setprecision(2) << v4;
+
+	}
+	if (x != 1)
+	if (x != 2)
+		if (y <= 5) {
+		v5 = x + y + z;
+		cout << "The value of V is " << endl;
+		cout << setw(10);
+		cout << fixed;
+		cout << setprecision(2) << v5;
+
+	}
+	if (x != 1) 
+	if (x !=2)
+		if (y > 5) {
+		v6 = x + y + z;
+		cout << "The value of V is " << endl;
+		cout << setw(10);
+		cout << fixed;
+		cout << setprecision(2) << v6;
+	}
+
+	_getch();
+	return 0;
+}
+// Experiment 2 - Question no. 4
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+	int n1, n2, n3;
+	
+	cout << "Enter the first number: ";
+	cin >> n1;
+
+	cout << "Enter the second number: ";
+	cin >> n2;
+
+	cout << "Enter the third number: ";
+	cin >> n3;
+
+	
+		if(n3 > n2)
+		{
+			if (n3 > n1) {
+				cout << "The Largest Number among these 3 numbers is: " << n3;
+			}
+
+			else
+			{
+				cout << "The Largest Number among these 3 numbers is: " << n1;
+			}
+		}
+		else if (n2 > n3) {
+			cout << "The Largest Number among these 3 numbers is: " << n2;
+		}
+			else
+			{
+			cout << "The Largest Number among these 3 numbers is: " << n1;
+			}
+
+		_getch();
+		return 0;
+}
+
+// Experiment 2 - Question no. 5
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+	int nums, nums2;
+
+	cout << "Counting..." << endl;
+
+	for (nums = 1; nums <= 10; nums++)
+	{
+		cout << nums << " , ";
+	}
+	for (nums2 = 12; nums2 <= 30; nums2 = nums2 + 2)
+	{
+		cout << nums2 << " , ";
+	}
+	_getch();
+	return 0;
+}
+
+// Experiment 2 - Question no. 6
+
+#include <iostream>
+#include <conio.h>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	int sums, sums1, intr, x, x1;
+	
+	intr = 0;
+	x = 1;
+
+	cout << "Fibonacci numbers: (next 20 numbers after 0 and 1)" << endl;
+
+	for (intr = 0; intr < 6765 ; intr+2)
+	{
+		x1 = intr + x;
+		intr = x;
+		x = x1;
+		cout << x1 << " " << " , " ;
+	}
+	
+	_getch();
+	return 0;
+}
+
+// Experiment 2 - Question no. 7
+
+#include <iostream>
+#include <conio.h>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	int x, strt, sums, sums1;
+
+	sums = 0;
+	strt = 1;
+
+	cout << "Assign a value: ";
+	cin >> x;
+
+	while (x > 0) {
+
+		for (strt = 1; strt <= x; ++strt)
+		{
+			sums1 = x * (strt + 1);
+			sums = sums1 / 2;
+		}
+		cout << "The total sum from 1 to " << x << " " << "is ";
+		cout << sums << endl;
+
+		cout << "Assign a value: " << endl;
+		cin >> x;
+	}
+
+
+	if (x <= 0) {
+		cout << "This is not possible!" << endl;
+	}
+
+
+
+
+	_getch();
+	return 0;
+}
+
+// Experiment 2 - Question no. 8
+
+#include <iostream>
+#include <conio.h>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	int x, strt, pro1, pro2, pro3, pro4, pro5, pro6, pro7, pro8, pro9, pro10;
+
+	cout << "Enter a number: ";
+	cin >> x;
+
+	
+	while (x > 0) {
+
+		for (strt = 1; strt <= x; ++strt)
+		{
+			pro1 = 1 * x;
+			pro2 = 2 * x;
+			pro3 = 3 * x;
+			pro4 = 4 * x;
+			pro5 = 5 * x;
+			pro6 = 6 * x;
+			pro7 = 7 * x;
+			pro8 = 8 * x;
+			pro9 = 9 * x;
+			pro10 = 10 * x;
+		}
+
+		cout << "Multiplication Table of " << x << endl;
+		cout << "1 x " << x << " " << "= " << pro1 << endl;
+		cout << "2 x " << x << " " << "= " << pro2 << endl;
+		cout << "3 x " << x << " " << "= " << pro3 << endl;
+		cout << "4 x " << x << " " << "= " << pro4 << endl;
+		cout << "5 x " << x << " " << "= " << pro5 << endl;
+		cout << "6 x " << x << " " << "= " << pro6 << endl;
+		cout << "7 x " << x << " " << "= " << pro7 << endl;
+		cout << "8 x " << x << " " << "= " << pro8 << endl;
+		cout << "9 x " << x << " " << "= " << pro9 << endl;
+		cout << "10 x " << x << " " << "= " << pro10 << endl;
+		break;
+	}
+	
+	if(x == 0) {
+		cout << "The Product will be 0" << endl;
+	}
+
+	_getch();
+	return 0;
+}
+
+// Experiment 2 - Question no. 9
+
+#include <iostream>
+#include <conio.h>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	int x, y, z;
+	char astr;
+
+	cout << "Number of columns: ";
+	cin >> x;
+
+	cout << "Number of rows: ";
+	cin >> y;
+
+	astr = '*';
+
+		for (z = 1; z <= y; z=z+1)
+		{
+			cout << setfill('*') << setw(x);
+			cout << astr << endl;
+		}
+	
+
+
+	_getch();
+	return 0;
+
+}
